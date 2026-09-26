@@ -1,4 +1,6 @@
 .product {
+  @include hover(transform, scale(1.05));
+
   &__img {
     width: 100%;
     margin-bottom: 32px;

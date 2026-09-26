@@ -11,17 +11,39 @@
   &__button {
     margin-top: 40px;
 
+    @include on-tablet {
+      margin-top: 48px;
+    }
+
     @include page-grid;
+
+    &-link {
+      grid-column: span 2;
+
+      @include on-tablet {
+        grid-column: 2 / -2;
+      }
+
+      @include on-desktop {
+        grid-column: 5 / -5;
+      }
+    }
   }
 }
 
 .detail {
+  @include page-grid;
+
   &__photos {
+    grid-column: 1 / -1;
+
     @include page-grid;
   }
 
   &__link {
     position: relative;
+    overflow: hidden;
+
     &--wide {
       @include on-tablet {
         grid-column: span 4;
@@ -51,9 +73,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    @include hover(transform, scale(1.05));
   }
 
   &__title {
+    grid-column: 1 / -1;
     margin: 16px 0 8px;
     font-size: 24px;
     font-weight: 700;
@@ -61,6 +86,11 @@
   }
 
   &__text {
+    grid-column: 1 / -1;
     font-weight: 400;
+
+    @include on-desktop {
+      grid-column: span 8;
+    }
   }
 }

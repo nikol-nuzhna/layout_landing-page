@@ -12,10 +12,10 @@
     height: 32px;
   }
 
-  &__phone {
+  &--phone {
     background-image: url(/src/img/icons/icon-phone.svg);
 
-    &--tooltip {
+    &-tooltip {
       font-size: 12px;
       font-weight: 700;
       line-height: 16px;
@@ -36,15 +36,15 @@
     }
 
     @include on-desktop {
-      &:hover + &--tooltip,
-      &:focus + &--tooltip {
+      &:hover + &-tooltip,
+      &:focus + &-tooltip {
         transform: scale(1);
         transition-delay: 0s;
       }
     }
   }
 
-  &__menu {
+  &--menu {
     background-image: url(/src/img/icons/icon-burger-menu.svg);
 
     &:hover {
@@ -52,7 +52,7 @@
     }
   }
 
-  &__close {
+  &--close {
     background-image: url(/src/img/icons/icon-close.svg);
   }
 }

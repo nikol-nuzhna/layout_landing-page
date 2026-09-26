@@ -13,15 +13,7 @@
   }
 
   @include on-desktop {
-    font-size: 58px;
-    line-height: 58px;
-    margin-bottom: 56px;
-  }
-
-  &--smaller {
-    @include on-desktop {
-      font-size: 48px;
-      line-height: 48px;
-    }
+    font-size: 64px;
+    line-height: 64px;
   }
 }

@@ -1,23 +1,21 @@
 .menu {
   box-sizing: border-box;
   background-color: #c2c2c2;
-  color: $menu-text-color;
+  color: $main-dark-color;
   font-weight: 600;
   text-transform: uppercase;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 10;
 
   &__top-bar {
     margin-bottom: 24px;
   }
 
   &__nav {
-    margin: 48px 0 40px;
+    margin: 0 0 40px;
+    margin-top: $mobile-top-bar-height + 24px;
+
+    @include on-tablet {
+      margin-top: $tablet-top-bar-height + 8px;
+    }
   }
 
   &__phone-number {
@@ -34,6 +32,6 @@
 
     width: fit-content;
     padding-bottom: 8px;
-    border-bottom: 1px solid $menu-text-color;
+    border-bottom: 1px solid $main-dark-color;
   }
 }

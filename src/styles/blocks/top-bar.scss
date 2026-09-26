@@ -1,9 +1,21 @@
 .top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  height: $mobile-top-bar-height;
+
+  @include on-tablet {
+    height: $tablet-top-bar-height;
+  }
+
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
   overflow: hidden;
 
   padding-block: 24px;
@@ -24,9 +36,9 @@
   &__icons {
     display: flex;
     gap: 24px;
+  }
 
-    &--phone {
-      position: relative;
-    }
+  &--phone {
+    position: relative;
   }
 }

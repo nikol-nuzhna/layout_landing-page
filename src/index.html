@@ -8,8 +8,8 @@
     />
     <title>MYBike</title>
     <link
-      href="https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,700italic&family=Yuji+Boku&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:regular,500,600,700,700italic&family=Yuji+Boku&display=swap"
     />
     <link
       rel="stylesheet"
@@ -25,50 +25,48 @@
       defer
     ></script>
   </head>
+
   <body>
     <div class="wrapper">
-      <!-- *HEADER -->
-      <header class="header">
+      <!-- *TOP-BAR -->
+      <div class="top-bar wrapper__top-bar">
         <div class="container">
-          <div class="header__content">
-            <!-- *HEADER TOP-BAR -->
-            <div class="header__top-bar top-bar">
+          <a
+            href="#"
+            class="top-bar__logo"
+          >
+            <img
+              src="./img/logo.svg"
+              alt="MyBike-logo"
+            />
+          </a>
+
+          <div class="top-bar__icons">
+            <div class="top-bar--phone">
               <a
-                href="#"
-                class="top-bar__logo"
-              >
-                <img
-                  src="./img/logo.svg"
-                  alt="MyBike-logo"
-                />
-              </a>
-
-              <div class="top-bar__icons">
-                <div class="top-bar__icons--phone">
-                  <a
-                    href="tel:+1 234 555-55-55"
-                    class="icon icon__phone"
-                  ></a>
-                  <span
-                    class="icon__phone--tooltip"
-                    role="icon__phone"
-                  >
-                    +1 234 555-55-55
-                  </span>
-                </div>
-                <a
-                  href="#menu"
-                  class="icon icon__menu"
-                ></a>
-              </div>
+                class="icon icon--phone"
+                href="tel:+1 234 555-55-55"
+              ></a>
+              <span class="icon--phone-tooltip">+1 234 555-55-55</span>
             </div>
-
-            <!-- *HEADER BOTTOM -->
-            <div class="header__bottom">
-              <h1 class="header__title">Take the Streets</h1>
-            </div>
+            <a
+              href="#menu"
+              class="icon icon--menu"
+            ></a>
           </div>
         </div>
+      </div>
+
+      <!-- *HEADER -->
+      <header class="header">
+        <!-- *HEADER BANNER -->
+        <section class="header__banner banner">
+          <div class="banner__content">
+            <div class="container">
+              <h1 class="banner__title">Take the Streets</h1>
+            </div>
+          </div>
+        </section>
       </header>
 
       <!-- *MENU -->
@@ -79,20 +77,22 @@
         <div class="container">
           <!-- *MENU TOP-BAR -->
           <div class="menu__top-bar top-bar">
-            <a
-              href="#"
-              class="top-bar__logo"
-            >
-              <img
-                src="./img/menu-logo.svg"
-                alt="MyBike-logo"
-              />
-            </a>
+            <div class="container">
+              <a
+                href="#"
+                class="top-bar__logo"
+              >
+                <img
+                  src="./img/menu-logo.svg"
+                  alt="MyBike-logo"
+                />
+              </a>
 
-            <a
-              href="#"
-              class="icon icon__close"
-            ></a>
+              <a
+                href="#close"
+                class="icon icon--close"
+              ></a>
+            </div>
           </div>
 
           <!-- *MENU NAV -->
@@ -143,15 +143,15 @@
             </nav>
 
             <a
-              href="tel:+1 234 555-55-55"
               class="menu__phone-number"
+              href="tel:+1 234 555-55-55"
             >
               +1 234 555-55-55
             </a>
 
             <a
-              href="tel:+1 234 555-55-55"
               class="menu__book"
+              href="tel:+1 234 555-55-55"
             >
               Book a test ride
             </a>
@@ -168,9 +168,7 @@
               class="main__about about"
               id="about"
             >
-              <h2 class="about__title section-title section-title--align--left">
-                Move&nbspFree
-              </h2>
+              <h2 class="about__title section-title">Move&nbspFree</h2>
               <div class="about__text">
                 Shift your ride, not gears. Find the fastest way to move in the
                 city as the bike adapts intuitively to power the speed you need.
@@ -357,41 +355,45 @@
               <div class="details__button button">
                 <a
                   href="#"
-                  class="button__link"
+                  class="button__link details__button-link"
                 >
                   Explore
                 </a>
               </div>
             </section>
 
-            <!-- *MAIN CONTACTS -->
+            <!-- *MAIN CONTACT US -->
             <section
               class="contacts"
               id="contacts"
             >
-              <h2 class="section-title section-title--contacts">Contacts</h2>
+              <h2 class="section-title">Contact Us</h2>
               <div class="contacts__wrapper">
-                <!-- *MAIN CONTACTS FORM -->
+                <!-- *MAIN CONTACT US FORM -->
                 <form
                   action="#"
                   class="contacts__form form"
+                  onsubmit="this.reset(); return false;"
                 >
                   <input
                     type="text"
                     name="name"
                     placeholder="Name"
-                    class="form__name form--input"
+                    class="form__input"
+                    required
                   />
                   <input
                     type="email"
                     name="email"
                     placeholder="Email"
-                    class="form__email form--input"
+                    class="form__input"
+                    required
                   />
                   <textarea
                     name="message"
                     placeholder="Message"
                     class="form__message"
+                    required
                   ></textarea>
                   <div class="form__button button">
                     <button
@@ -423,7 +425,7 @@
                       hello@miami.com
                     </a>
                   </div>
-                  <div class="contacts__adress">
+                  <div class="contacts__address">
                     <p class="contacts__title">Address</p>
                     <a
                       class="contacts__content"

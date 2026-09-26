@@ -1,33 +1,68 @@
 html {
-  font-family: Poppins, 'Yuji Boku', serif;
-  background-color: #1d1d1d;
+  font-family: Poppins, 'Yuji Boku', sans-serif;
+  background-color: $main-dark-color;
   color: #fff;
   font-size: 16px;
   line-height: 22.4px;
 
   scroll-behavior: smooth;
   scrollbar-color: #595959 #333;
+  scrollbar-gutter: stable;
+
+  &:has(.menu:target) {
+    overflow: hidden;
+    background-color: #c2c2c2;
+  }
 }
 
 body {
   min-width: 320px;
 }
 
-.wrapper__menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+.wrapper {
+  &__top-bar {
+    background-color: transparent;
 
-  transition: all $effectDuration;
-  opacity: 0;
-  transform: translateX(200%);
-  pointer-events: none;
+    animation-name: top-bar-background;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-duration: auto;
+    animation-timeline: scroll(root);
+    animation-range: calc(100vh - $mobile-top-bar-height)
+      calc(100vh - $mobile-top-bar-height);
 
-  &:target {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: all;
+    @include on-tablet {
+      animation-range: calc(100vh - $tablet-top-bar-height)
+        calc(100vh - $tablet-top-bar-height);
+    }
+  }
+
+  &__menu {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    z-index: 10;
+
+    transition: all $effectDuration;
+    opacity: 0;
+    transform: translateX(200%);
+    pointer-events: none;
+
+    &:target {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: all;
+    }
+  }
+}
+
+@keyframes top-bar-background {
+  from {
+    background-color: transparent;
+  }
+
+  to {
+    background-color: $main-dark-color;
   }
 }
 
